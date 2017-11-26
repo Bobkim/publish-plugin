@@ -33,8 +33,7 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.9.9'
 }
 
-apply plugin: com.example.publishedplugin.GreetingPlugin
-
+apply plugin: 'com.app.publishedplugin'
 
 hello {
     message = "Hi"
@@ -42,16 +41,16 @@ hello {
 }
 
 pluginBundle {
-    website = 'https://github.com/Bobkim/greetingss1'
-    vcsUrl = 'https://github.com/Bobkim/greetingss1.git'
+    website = 'https://github.com/Bobkim/publish-plugin'
+    vcsUrl = 'https://github.com/Bobkim/publish-plugin.git'
     version = '0.9'
 
     plugins {
         greetingsPlugin {
-            id = 'org.example.greetingss1'
-            displayName = 'Gradle Guides Example Greeting Plugin'
-            description = 'The Greeting plugin is used as a template for people to start their own plugin adventure'
-            tags = ['example', 'template', 'greeting']
+            id = 'com.app.publishedplugin'
+            displayName = 'A demo'
+            description = 'A demo for do practise publishing plugin on gradle plugin portal'
+            tags = ['example', 'demo', 'greeting']
             version = '0.9'
         }
     }
