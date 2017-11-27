@@ -1,0 +1,32 @@
+
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+dependencies {
+    compile gradleApi() //gradle sdk
+    compile localGroovy() //groovy sdk
+}
+
+repositories {
+    jcenter()
+}
+
+
+apply plugin: 'com.app.publishedplugin'
+
+pluginBundle {
+    website = 'https://github.com/Bobkim/publish-plugin'
+    vcsUrl = 'https://github.com/Bobkim/publish-plugin.git'
+    version = '0.9'
+
+    plugins {
+        greetingsPlugin {
+            id = 'com.app.publishedplugin'
+            displayName = 'A demo'
+            description = 'A demo for do practise publishing plugin on gradle plugin portal'
+            tags = ['example', 'demo', 'greeting']
+            version = '0.9'
+        }
+    }
+}
