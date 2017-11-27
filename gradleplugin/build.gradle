@@ -1,5 +1,11 @@
 
 
+
+
+
+plugins {
+    id 'com.gradle.plugin-publish' version '0.9.7'
+}
 apply plugin: 'java'
 apply plugin: 'maven'
 
@@ -12,13 +18,11 @@ repositories {
     jcenter()
 }
 
-
-apply plugin: 'com.app.publishedplugin'
-
+// remote publishing
 pluginBundle {
     website = 'https://github.com/Bobkim/publish-plugin'
     vcsUrl = 'https://github.com/Bobkim/publish-plugin.git'
-    version = '0.9'
+    version = '0.9.3'
 
     plugins {
         greetingsPlugin {
@@ -26,7 +30,21 @@ pluginBundle {
             displayName = 'A demo'
             description = 'A demo for do practise publishing plugin on gradle plugin portal'
             tags = ['example', 'demo', 'greeting']
-            version = '0.9'
+            version = '0.9.3'
         }
     }
 }
+
+
+// local publishing
+//apply plugin: 'com.app.publishedplugin'
+
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        repository(url: uri('../repo')) //仓库的路径，此处是项目根目录下的 repo 的文件夹
+//        pom.groupId = 'com.example.publishedplugin'  //groupId ，自行定义，一般是包名
+//        pom.artifactId = 'publishedplugin' //artifactId ，自行定义
+//        pom.version = '0.9' //version 版本号
+//    }
+//}
+// local publishing
